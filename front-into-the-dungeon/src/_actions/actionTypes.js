@@ -1,0 +1,1 @@
+export const ITEMS_LIST = "ITEMS_LIST"
