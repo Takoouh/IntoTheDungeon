@@ -8,6 +8,6 @@ const itemsReducer = (previousState = initialState, action) => {
     default:
       return previousState
   }
-}
+};
 
 export default itemsReducer

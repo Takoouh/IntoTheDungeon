@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Shop from './Shop';
 import { Container, Row, Col, Nav, NavItem, NavLink } from "reactstrap"
+import ShopContainer from './_containers/ShopContainer';
 
 class App extends Component {
   render() {
@@ -24,7 +24,7 @@ class App extends Component {
           </Nav>
         </Col>
         <Col xs="6">
-          <Shop />
+          <ShopContainer />
         </Col>
         <Col xs="3 charaStatus">
         </Col>

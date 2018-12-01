@@ -1,5 +1,5 @@
-import { ITEMS_LIST } from "./actionTypes"
-import { makeItemsListAction } from './actions'
+import { ITEMS_LIST, FETCH_API } from "./actionTypes"
+import { makeItemsListAction, makeFetchApiAction } from './actions'
 
 describe("makeItemsListAction", () => {
   it("should return a ITEMS_LIST action", () => {
@@ -23,5 +23,15 @@ describe("makeItemsListAction", () => {
       items
     }
     expect(makeItemsListAction(items)).toEqual(expected)
+  })
+})
+
+describe("makeFetchApiAction", () => {
+  it("should return a FETCH_API action", () => {
+
+    const expected = {
+      type: FETCH_API
+    }
+    expect(makeFetchApiAction()).toEqual(expected)
   })
 })

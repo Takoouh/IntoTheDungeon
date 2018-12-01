@@ -7,11 +7,17 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import itemsReducer from "./_reducers/itemsReducer"
+import loadingReducer from './_reducers/loadingReducer';
+
+
+const rootReducer = combineReducers({
+  items: itemsReducer,
+  loading: loadingReducer
+})
 
 const store = createStore(
-  combineReducers({
-    items: itemsReducer
-  })
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
 ReactDOM.render(

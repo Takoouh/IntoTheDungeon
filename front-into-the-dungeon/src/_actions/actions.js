@@ -1,4 +1,4 @@
-import { ITEMS_LIST } from "./actionTypes"
+import { ITEMS_LIST, FETCH_API } from "./actionTypes"
 
 export const makeItemsListAction = items => (
   {
@@ -6,3 +6,7 @@ export const makeItemsListAction = items => (
     items
   }
 )
+
+export const makeFetchApiAction = () => ({
+  type: FETCH_API
+})
