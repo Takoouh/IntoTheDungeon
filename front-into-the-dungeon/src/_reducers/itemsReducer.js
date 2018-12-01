@@ -1,3 +1,5 @@
+import { ITEMS_LIST } from "../_actions/actionTypes";
+
 const initialState = []
 const itemsReducer = (previousState = initialState, action) => {
   switch (action.type) {

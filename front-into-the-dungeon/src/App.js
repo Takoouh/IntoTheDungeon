@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Shop from './Shop';
-import { Container } from "reactstrap"
+import { Container, Row, Col, Nav, NavItem, NavLink } from "reactstrap"
 
 class App extends Component {
   render() {
