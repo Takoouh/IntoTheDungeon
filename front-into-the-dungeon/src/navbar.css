@@ -1,0 +1,13 @@
+ul.nav li a{
+  color: #FFF;
+  -webkit-box-shadow: 0 0 5px 0 #000000;
+  box-shadow: 0 0 5px 0 #000000;
+  font-family: 'Rock Salt', cursive;
+  transition: all 0.2s;
+}
+
+ul.nav li a:hover{
+  -webkit-box-shadow: 0 0 1px 0 #000000;
+  box-shadow: 0 0 1px 0 #000000;
+  font-family: 'Rock Salt', cursive;
+}

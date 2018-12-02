@@ -1,3 +1,7 @@
 export const ITEMS_LIST = "ITEMS_LIST"
 
-export const FETCH_API = "FETCH_API"
+export const LOADING_ITEMS = "LOADING_ITEMS"
+
+export const LOADING_STATS = "LOADING_STATS"
+
+export const ADVENTURER_STATS = "ADVENTURER_STATS"

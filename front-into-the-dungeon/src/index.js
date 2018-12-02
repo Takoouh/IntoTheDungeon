@@ -6,13 +6,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
 import itemsReducer from "./_reducers/itemsReducer"
-import loadingReducer from './_reducers/loadingReducer';
+import loadingItemsReducer from './_reducers/loadingItemsReducer';
+import loadingStatsReducer from './_reducers/loadingStatsReducer';
+import statsReducer from './_reducers/statsReducer';
 
 
 const rootReducer = combineReducers({
   items: itemsReducer,
-  loading: loadingReducer
+  stats: statsReducer,
+  loadingItems: loadingItemsReducer,
+  loadingStats: loadingStatsReducer
 })
 
 const store = createStore(

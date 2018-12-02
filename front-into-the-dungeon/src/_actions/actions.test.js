@@ -1,5 +1,5 @@
-import { ITEMS_LIST, FETCH_API } from "./actionTypes"
-import { makeItemsListAction, makeFetchApiAction } from './actions'
+import { ITEMS_LIST, LOADING_ITEMS, LOADING_STATS, ADVENTURER_STATS } from "./actionTypes"
+import { makeItemsListAction, makeLoadingItemsAction, makeLoadingStatsAction, makeAdventurerStatsAction } from './actions'
 
 describe("makeItemsListAction", () => {
   it("should return a ITEMS_LIST action", () => {
@@ -26,12 +26,39 @@ describe("makeItemsListAction", () => {
   })
 })
 
-describe("makeFetchApiAction", () => {
-  it("should return a FETCH_API action", () => {
+describe("makeLoadingItemsAction", () => {
+  it("should return a LOADING_ITEMS action", () => {
 
     const expected = {
-      type: FETCH_API
+      type: LOADING_ITEMS
     }
-    expect(makeFetchApiAction()).toEqual(expected)
+    expect(makeLoadingItemsAction()).toEqual(expected)
+  })
+})
+
+describe("makeLoadingStatsAction", () => {
+  it("should return a LOADING_STATS action", () => {
+
+    const expected = {
+      type: LOADING_STATS
+    }
+    expect(makeLoadingStatsAction()).toEqual(expected)
+  })
+})
+
+describe("makeAdventurerStatsAction", () => {
+  it("should return a ADVENTURER_STATS action", () => {
+    const stats =
+    {
+      name: "Hero",
+      strength: 7,
+      defense: 2
+    }
+
+    const expected = {
+      type: ADVENTURER_STATS,
+      stats
+    }
+    expect(makeAdventurerStatsAction(stats)).toEqual(expected)
   })
 })
