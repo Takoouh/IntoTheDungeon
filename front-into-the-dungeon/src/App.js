@@ -25,11 +25,14 @@ class App extends Component {
                 <NavLink href="#"><i className="pr-2 fas fa-beer"></i>Inn</NavLink>
               </NavItem>
               <NavItem className="my-2">
+                <NavLink href="#"><i className="pr-2 fas fa-book-dead"></i>Journal</NavLink>
+              </NavItem>
+              <NavItem className="my-2">
                 <NavLink disabled href="#"><i className="pr-2 fas fa-crown"></i>Ranking</NavLink>
               </NavItem>
             </Nav>
           </Col>
-          <Col xs="7">
+          <Col xs="7 content">
             <FloorChoice />
 
             {/* <ShopContainer /> */}
