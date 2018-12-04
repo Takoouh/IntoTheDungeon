@@ -1,5 +1,14 @@
 ##ACTIONS
 
+
+-FLOOR_LIST is dispatched when we receives the api response
+```javascript
+{
+  type: "FLOOR_LIST"
+  floors: INT
+}
+```
+
 -ITEMS_LIST is dispatched when we receives the api response
 ```javascript
 {
@@ -21,6 +30,12 @@
 
 
 ##REDUCERS
+
+-floorsReducer
+```javascript
+const initital: 0
+```
+When floorsReducer is dispatched, the state becomes action.floors
 
 -itemsReducer
 ```javascript

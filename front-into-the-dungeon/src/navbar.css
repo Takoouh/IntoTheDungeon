@@ -1,4 +1,7 @@
 ul.nav li a{
+  width: 100%;
+  display: block;
+  line-height: 40px;
   color: #FFF;
   -webkit-box-shadow: 0 0 5px 0 #000000;
   box-shadow: 0 0 5px 0 #000000;

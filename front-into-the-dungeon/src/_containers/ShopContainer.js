@@ -1,17 +1,17 @@
 import { connect } from "react-redux"
 import {
-  makeItemsListAction, makeLoadingItemsAction
+  makeItemsListAction, makeLoadingApiAction
 } from "../_actions/actions"
 import Shop from "../Shop"
 
 const mapStateToProps = state => ({
   items: state.items,
-  loadingItems: state.loadingItems
+  isLoadingApi: state.loadingApi
 })
 
 const mapDispatchToProps = dispatch => ({
   itemsList: items => dispatch(makeItemsListAction(items)),
-  loadingItems: () => dispatch(makeLoadingItemsAction())
+  loadingApi: () => dispatch(makeLoadingApiAction())
 })
 
 export default connect(

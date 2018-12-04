@@ -1,6 +1,8 @@
+export const FLOOR_LIST = "FLOOR_LIST"
+
 export const ITEMS_LIST = "ITEMS_LIST"
 
-export const LOADING_ITEMS = "LOADING_ITEMS"
+export const LOADING_API = "LOADING_API"
 
 export const LOADING_STATS = "LOADING_STATS"
 

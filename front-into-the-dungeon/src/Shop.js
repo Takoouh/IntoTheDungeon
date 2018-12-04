@@ -6,17 +6,17 @@ import axios from "axios"
 class Shop extends Component {
 
   componentDidMount() {
-    this.props.loadingItems()
+    this.props.loadingApi()
     axios.get("http://localhost:3010/api/items")
       .then(res => this.props.itemsList(res.data))
   }
   render() {
-
+    console.log(this.props.isLoadingApi)
 
 
     return (
       <div>
-        {this.props.loadingItems ? (
+        {this.props.isLoadingApi ? (
           <div><p className="text-center"><i className="fas fa-cog fa-spin"></i></p></div>
         ) : (
             this.props.items.map(item => (

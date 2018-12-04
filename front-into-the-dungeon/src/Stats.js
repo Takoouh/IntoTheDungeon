@@ -12,7 +12,7 @@ class Stats extends Component {
 
     return (
       <div>
-        {this.props.loadingStats ?
+        {this.props.isLoadingStats ?
           (<div><p className="text-center"><i className="fas fa-cog fa-spin"></i></p></div>)
           :
           (<div>HELLO

@@ -1,4 +1,11 @@
-import { ITEMS_LIST, ADVENTURER_STATS, LOADING_ITEMS, LOADING_STATS } from "./actionTypes"
+import { ITEMS_LIST, ADVENTURER_STATS, LOADING_API, LOADING_STATS, FLOOR_LIST } from "./actionTypes"
+
+export const makeFloorListAction = currentFloor => (
+  {
+    type: FLOOR_LIST,
+    currentFloor
+  }
+)
 
 export const makeItemsListAction = items => (
   {
@@ -7,8 +14,8 @@ export const makeItemsListAction = items => (
   }
 )
 
-export const makeLoadingItemsAction = () => ({
-  type: LOADING_ITEMS
+export const makeLoadingApiAction = () => ({
+  type: LOADING_API
 })
 
 export const makeLoadingStatsAction = () => ({

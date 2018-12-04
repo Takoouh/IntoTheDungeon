@@ -7,16 +7,20 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import { BrowserRouter } from "react-router-dom"
+
 import itemsReducer from "./_reducers/itemsReducer"
-import loadingItemsReducer from './_reducers/loadingItemsReducer';
+import loadingApiReducer from './_reducers/loadingApiReducer';
 import loadingStatsReducer from './_reducers/loadingStatsReducer';
 import statsReducer from './_reducers/statsReducer';
+import floorsReducer from './_reducers/floorsReducer';
 
 
 const rootReducer = combineReducers({
+  floorList: floorsReducer,
   items: itemsReducer,
   stats: statsReducer,
-  loadingItems: loadingItemsReducer,
+  loadingApi: loadingApiReducer,
   loadingStats: loadingStatsReducer
 })
 
@@ -26,9 +30,11 @@ const store = createStore(
 )
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>,
   document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

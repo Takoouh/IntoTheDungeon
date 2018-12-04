@@ -4,7 +4,7 @@ import Stats from "../Stats"
 
 const mapStateToProps = state => ({
   stats: state.stats,
-  loadingStats: state.loadingStats
+  isLoadingStats: state.loadingStats
 })
 
 const mapDispatchToProps = dispatch => ({

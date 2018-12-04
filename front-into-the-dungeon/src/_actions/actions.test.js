@@ -1,5 +1,16 @@
-import { ITEMS_LIST, LOADING_ITEMS, LOADING_STATS, ADVENTURER_STATS } from "./actionTypes"
-import { makeItemsListAction, makeLoadingItemsAction, makeLoadingStatsAction, makeAdventurerStatsAction } from './actions'
+import { ITEMS_LIST, LOADING_API, LOADING_STATS, ADVENTURER_STATS, FLOOR_LIST } from "./actionTypes"
+import { makeFloorListAction, makeItemsListAction, makeLoadingApiAction, makeLoadingStatsAction, makeAdventurerStatsAction } from './actions'
+
+describe("makeFloorListAction", () => {
+  it("should return a FLOOR_LIST action", () => {
+    const currentFloor = 6
+    const expected = {
+      type: FLOOR_LIST,
+      currentFloor: 6
+    }
+    expect(makeFloorListAction(currentFloor)).toEqual(expected)
+  })
+})
 
 describe("makeItemsListAction", () => {
   it("should return a ITEMS_LIST action", () => {
@@ -26,13 +37,14 @@ describe("makeItemsListAction", () => {
   })
 })
 
+
 describe("makeLoadingItemsAction", () => {
-  it("should return a LOADING_ITEMS action", () => {
+  it("should return a LOADING_API action", () => {
 
     const expected = {
-      type: LOADING_ITEMS
+      type: LOADING_API
     }
-    expect(makeLoadingItemsAction()).toEqual(expected)
+    expect(makeLoadingApiAction()).toEqual(expected)
   })
 })
 
