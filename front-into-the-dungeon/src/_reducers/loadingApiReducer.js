@@ -1,9 +1,8 @@
-import { ITEMS_LIST, LOADING_API } from "../_actions/actionTypes"
+import { GET_ITEMS_LIST, LOADING_API } from "../_actions/actionTypes"
 
-
-const loadingItemsReducer = (previousState = false, action) => {
+const loadingApiReducer = (previousState = false, action) => {
   switch (action.type) {
-    case ITEMS_LIST:
+    case GET_ITEMS_LIST:
       return false
     case LOADING_API:
       return true
@@ -12,4 +11,4 @@ const loadingItemsReducer = (previousState = false, action) => {
   }
 }
 
-export default loadingItemsReducer
+export default loadingApiReducer

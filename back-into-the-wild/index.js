@@ -29,6 +29,18 @@ app.get('/api/adventurer', (req, res) => {
   })
 })
 
+
+app.get('/api/monsters/:id', (req, res) => {
+  const floor = [req.params.id];
+  connection.query(`SELECT monsterId FROM floorBestiary WHERE floor = ${floor}`, (err, results) => {
+    if (err) {
+      res.status(500).send("Error retrieving monster's from this floor");
+    } else {
+      res.json(results);
+    }
+  })
+})
+
 app.listen(port, err => {
   if (err) {
     throw new Error('Something went wrong ...');

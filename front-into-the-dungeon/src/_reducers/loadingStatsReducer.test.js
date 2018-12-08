@@ -1,5 +1,5 @@
 import loadingStatsReducer from "./loadingStatsReducer"
-import { makeLoadingStatsAction, makeAdventurerStatsAction } from "../_actions/actions";
+import { makeLoadingStatsAction, makeGetAdventurerStatsAction } from "../_actions/actions";
 
 describe("loadingStatsReducer", () => {
   it("handles LOADING_STATS action", () => {
@@ -8,7 +8,7 @@ describe("loadingStatsReducer", () => {
   })
   it("handles STATS_LIST", () => {
     const fakeState = true
-    expect(loadingStatsReducer(fakeState, makeAdventurerStatsAction([]))).toEqual(false)
+    expect(loadingStatsReducer(fakeState, makeGetAdventurerStatsAction([]))).toEqual(false)
   })
 
 })

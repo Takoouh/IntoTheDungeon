@@ -1,9 +1,16 @@
-export const FLOOR_LIST = "FLOOR_LIST"
+export const GET_FLOOR_LIST = "FLOOR_LIST"
 
-export const ITEMS_LIST = "ITEMS_LIST"
+export const GET_ITEMS_LIST = "ITEMS_LIST"
 
 export const LOADING_API = "LOADING_API"
 
 export const LOADING_STATS = "LOADING_STATS"
 
-export const ADVENTURER_STATS = "ADVENTURER_STATS"
+export const GET_ADVENTURER_STATS = "ADVENTURER_STATS"
+
+export const GET_MONSTER_LIST = "GET_MONSTER_LIST"
+
+//BattlesViews :
+
+export const VIEW_FLOOR_LIST = "VIEW_FLOOR_LIST"
+export const VIEW_START_BATTLE = "VIEW_START_BATTLE"

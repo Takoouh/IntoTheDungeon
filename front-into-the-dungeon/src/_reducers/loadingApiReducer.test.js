@@ -1,5 +1,5 @@
-import loadingApiReducer from "./loadingItemsReducer"
-import { makeLoadingApiAction, makeItemsListAction } from "../_actions/actions";
+import loadingApiReducer from "./loadingApiReducer"
+import { makeLoadingApiAction, makeGetItemsListAction } from "../_actions/actions";
 
 describe("loadingItemsReducer", () => {
   it("handles LOADING_ITEMS action", () => {
@@ -8,7 +8,7 @@ describe("loadingItemsReducer", () => {
   })
   it("handles ITEMS_LIST", () => {
     const fakeState = true
-    expect(loadingApiReducer(fakeState, makeItemsListAction([]))).toEqual(false)
+    expect(loadingApiReducer(fakeState, makeGetItemsListAction([]))).toEqual(false)
   })
 
 })

@@ -1,19 +1,83 @@
-import { ITEMS_LIST, LOADING_API, LOADING_STATS, ADVENTURER_STATS, FLOOR_LIST } from "./actionTypes"
-import { makeFloorListAction, makeItemsListAction, makeLoadingApiAction, makeLoadingStatsAction, makeAdventurerStatsAction } from './actions'
+import {
+  GET_ITEMS_LIST,
+  LOADING_API,
+  LOADING_STATS,
+  GET_ADVENTURER_STATS,
+  GET_FLOOR_LIST,
+  VIEW_START_BATTLE,
+  VIEW_FLOOR_LIST,
+  GET_MONSTER_LIST
+} from "./actionTypes"
+import {
+  makeGetFloorListAction,
+  makeGetMonsterListAction,
+  makeViewFloorListAction,
+  makeViewStartBattleAction,
+  makeGetItemsListAction,
+  makeLoadingApiAction,
+  makeLoadingStatsAction,
+  makeGetAdventurerStatsAction
+} from './actions'
 
-describe("makeFloorListAction", () => {
-  it("should return a FLOOR_LIST action", () => {
+describe("makeGetFloorListAction", () => {
+  it("should return a GET_FLOOR_LIST action", () => {
     const currentFloor = 6
     const expected = {
-      type: FLOOR_LIST,
+      type: GET_FLOOR_LIST,
       currentFloor: 6
     }
-    expect(makeFloorListAction(currentFloor)).toEqual(expected)
+    expect(makeGetFloorListAction(currentFloor)).toEqual(expected)
   })
 })
 
-describe("makeItemsListAction", () => {
-  it("should return a ITEMS_LIST action", () => {
+describe("makeGetMonsterListAction", () => {
+  it("should return a GET_MONSTER_LIST", () => {
+    const monsters = [
+      {
+        "monsterId": 1
+      },
+      {
+        "monsterId": 2
+      }
+    ]
+    const expected = {
+      type: GET_MONSTER_LIST,
+      monsters: [
+        {
+          "monsterId": 1
+        },
+        {
+          "monsterId": 2
+        }
+      ]
+    }
+    expect(makeGetMonsterListAction(monsters)).toEqual(expected)
+  })
+})
+
+describe("makeViewStartBattleAction", () => {
+  it("should return a VIEW_START_BATTLE action", () => {
+
+    const expected = {
+      type: VIEW_START_BATTLE
+    }
+    expect(makeViewStartBattleAction()).toEqual(expected)
+  })
+})
+
+describe("makeViewFloorListAction", () => {
+  it("should return a VIEW_FLOOR_LIST action", () => {
+
+    const expected = {
+      type: VIEW_FLOOR_LIST
+    }
+    expect(makeViewFloorListAction()).toEqual(expected)
+  })
+})
+
+
+describe("makeApiAction", () => {
+  it("should return a GET_ITEMS_LIST action", () => {
     const items = [
       {
         id: 1,
@@ -30,10 +94,10 @@ describe("makeItemsListAction", () => {
       }
     ]
     const expected = {
-      type: ITEMS_LIST,
+      type: GET_ITEMS_LIST,
       items
     }
-    expect(makeItemsListAction(items)).toEqual(expected)
+    expect(makeGetItemsListAction(items)).toEqual(expected)
   })
 })
 
@@ -58,8 +122,8 @@ describe("makeLoadingStatsAction", () => {
   })
 })
 
-describe("makeAdventurerStatsAction", () => {
-  it("should return a ADVENTURER_STATS action", () => {
+describe("makeGetAdventurerStatsAction", () => {
+  it("should return a GET_ADVENTURER_STATS action", () => {
     const stats =
     {
       name: "Hero",
@@ -68,9 +132,9 @@ describe("makeAdventurerStatsAction", () => {
     }
 
     const expected = {
-      type: ADVENTURER_STATS,
+      type: GET_ADVENTURER_STATS,
       stats
     }
-    expect(makeAdventurerStatsAction(stats)).toEqual(expected)
+    expect(makeGetAdventurerStatsAction(stats)).toEqual(expected)
   })
 })

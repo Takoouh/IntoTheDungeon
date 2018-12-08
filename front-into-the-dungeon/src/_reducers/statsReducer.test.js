@@ -1,8 +1,8 @@
 import statsReducer from "./statsReducer"
-import { makeAdventurerStatsAction } from '../_actions/actions'
+import { makeGetAdventurerStatsAction } from '../_actions/actions'
 
 describe("statsReducer", () => {
-  it("handles ADVENTURER_STATS action", () => {
+  it("handles GET_ADVENTURER_STATS action", () => {
     const fakeState = {}
     const stats =
     {
@@ -17,6 +17,6 @@ describe("statsReducer", () => {
       strength: 7,
       defense: 2
     }
-    expect(statsReducer(fakeState, makeAdventurerStatsAction(stats))).toEqual(expected)
+    expect(statsReducer(fakeState, makeGetAdventurerStatsAction(stats))).toEqual(expected)
   })
 })

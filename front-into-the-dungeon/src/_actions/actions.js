@@ -1,15 +1,31 @@
-import { ITEMS_LIST, ADVENTURER_STATS, LOADING_API, LOADING_STATS, FLOOR_LIST } from "./actionTypes"
+import {
+  GET_ITEMS_LIST,
+  GET_MONSTER_LIST,
+  GET_ADVENTURER_STATS,
+  LOADING_API,
+  LOADING_STATS,
+  GET_FLOOR_LIST,
+  VIEW_FLOOR_LIST,
+  VIEW_START_BATTLE
+} from "./actionTypes"
 
-export const makeFloorListAction = currentFloor => (
+export const makeGetFloorListAction = currentFloor => (
   {
-    type: FLOOR_LIST,
+    type: GET_FLOOR_LIST,
     currentFloor
   }
 )
 
-export const makeItemsListAction = items => (
+export const makeGetMonsterListAction = monsters => (
   {
-    type: ITEMS_LIST,
+    type: GET_MONSTER_LIST,
+    monsters
+  }
+)
+
+export const makeGetItemsListAction = items => (
+  {
+    type: GET_ITEMS_LIST,
     items
   }
 )
@@ -22,9 +38,18 @@ export const makeLoadingStatsAction = () => ({
   type: LOADING_STATS
 })
 
-export const makeAdventurerStatsAction = stats => (
+export const makeGetAdventurerStatsAction = stats => (
   {
-    type: ADVENTURER_STATS,
+    type: GET_ADVENTURER_STATS,
     stats
   }
 )
+
+//BattleViews :
+export const makeViewFloorListAction = () => ({
+  type: VIEW_FLOOR_LIST
+})
+
+export const makeViewStartBattleAction = () => ({
+  type: VIEW_START_BATTLE
+})
