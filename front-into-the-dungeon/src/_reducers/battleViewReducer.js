@@ -1,4 +1,4 @@
-import { VIEW_FLOOR_LIST, VIEW_START_BATTLE } from "../_actions/actionTypes"
+import { VIEW_FLOOR_LIST, VIEW_START_BATTLE, VIEW_ENCOUNTER } from "../_actions/actionTypes"
 
 const battleViewReducer = (previousState = "floorList", action) => {
   switch (action.type) {
@@ -6,6 +6,8 @@ const battleViewReducer = (previousState = "floorList", action) => {
       return "floorList"
     case VIEW_START_BATTLE:
       return "startBattle"
+    case VIEW_ENCOUNTER:
+      return "encounter"
     default:
       return previousState
   }

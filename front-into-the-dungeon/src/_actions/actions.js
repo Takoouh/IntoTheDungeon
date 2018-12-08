@@ -6,7 +6,9 @@ import {
   LOADING_STATS,
   GET_FLOOR_LIST,
   VIEW_FLOOR_LIST,
-  VIEW_START_BATTLE
+  VIEW_START_BATTLE,
+  GET_RDM_MONSTER,
+  VIEW_ENCOUNTER
 } from "./actionTypes"
 
 export const makeGetFloorListAction = currentFloor => (
@@ -20,6 +22,13 @@ export const makeGetMonsterListAction = monsters => (
   {
     type: GET_MONSTER_LIST,
     monsters
+  }
+)
+
+export const makeGetRdmMonsterAction = monster => (
+  {
+    type: GET_RDM_MONSTER,
+    monster
   }
 )
 
@@ -52,4 +61,8 @@ export const makeViewFloorListAction = () => ({
 
 export const makeViewStartBattleAction = () => ({
   type: VIEW_START_BATTLE
+})
+
+export const makeViewEncounterAction = () => ({
+  type: VIEW_ENCOUNTER
 })

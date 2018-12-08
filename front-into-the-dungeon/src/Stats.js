@@ -16,10 +16,10 @@ class Stats extends Component {
         {this.props.stats[0] ?
           (<Fragment>
             <h2>{this.props.stats[0].name}</h2>
-            <p>{this.props.stats[0].gold}<i class="fas fa-coins pl-2"></i></p>
+            <p>{this.props.stats[0].gold}<i className="fas fa-coins pl-2"></i></p>
             <p>{this.props.stats[0].level}</p>
-            <p>{this.props.stats[0].strength}<i class="fas fa-fist-raised pl-2"></i></p>
-            <p>{this.props.stats[0].defense}<i class="fas fa-shield-alt pl-2"></i></p>
+            <p>{this.props.stats[0].strength}<i className="fas fa-fist-raised pl-2"></i></p>
+            <p>{this.props.stats[0].defense}<i className="fas fa-shield-alt pl-2"></i></p>
           </Fragment>)
           :
 

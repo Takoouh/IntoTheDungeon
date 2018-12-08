@@ -6,11 +6,13 @@ import {
   GET_FLOOR_LIST,
   VIEW_START_BATTLE,
   VIEW_FLOOR_LIST,
-  GET_MONSTER_LIST
+  GET_MONSTER_LIST,
+  GET_RDM_MONSTER
 } from "./actionTypes"
 import {
   makeGetFloorListAction,
   makeGetMonsterListAction,
+  makeGetRdmMonsterAction,
   makeViewFloorListAction,
   makeViewStartBattleAction,
   makeGetItemsListAction,
@@ -52,6 +54,17 @@ describe("makeGetMonsterListAction", () => {
       ]
     }
     expect(makeGetMonsterListAction(monsters)).toEqual(expected)
+  })
+})
+
+describe("makeGetRdmMonsterAction", () => {
+  it("should return a GET_RDM_MONSTER", () => {
+    const monster = [{ name: "name", level: 1 }]
+    const expected = {
+      type: GET_RDM_MONSTER,
+      monster: [{ name: "name", level: 1 }]
+    }
+    expect(makeGetRdmMonsterAction(monster)).toEqual(expected)
   })
 })
 

@@ -13,7 +13,7 @@ class FloorChoice extends Component {
 
   getMonstersQuery = floor => {
     axios
-      .get(`http://localhost:3010/api/monsters/${floor}`)
+      .get(`http://localhost:3010/api/monsters/floor=${floor}`)
       .then(res => this.props.getMonsters(res.data))
   }
 

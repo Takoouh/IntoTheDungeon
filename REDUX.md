@@ -17,6 +17,14 @@
 }
 ```
 
+-GET_RDM_MONSTER is dispatched when we receives the api response
+```javascript
+{
+  type: "GET_RDM_MONSTER"
+  monster: {}
+}
+```
+
 -CHANGE_BATTLE_VIEW is dispatched when we chose options during the fight
 ```javascript
 {
@@ -51,13 +59,19 @@
 ```javascript
 const initital: 0
 ```
-When floorsReducer is dispatched, the state becomes action.floors and action.monsterList
+When GET_FLOOR_LIST is dispatched, the state becomes action.floors and when GET_MONSTER_LIST action.monsterList
 
 -battleViewReducer
 ```javascript
 const initital: "floorChoice"
 ```
 When battleViewReducer is dispatched, the state becomes action.battleView
+
+-monsterReducer
+```javascript
+const initital: {}
+```
+When GET_RDM_MONSTER is dispatched, the state becomes action.monster
 
 
 -itemsReducer
@@ -73,7 +87,7 @@ const initital: false
 When LOADING_ITEMS is dispatched, the state becomes true
 When GET_ITEMS_LIST is dispatched, the state becomes false
 
--loadingStatssReducer
+-loadingStatsReducer
 ```javascript
 const initital: false
 ```

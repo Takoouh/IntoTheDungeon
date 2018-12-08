@@ -16,12 +16,14 @@ import statsReducer from './_reducers/statsReducer';
 import floorsReducer from './_reducers/floorsReducer';
 import battleViewReducer from './_reducers/battleViewReducer';
 import getMonstersReducer from './_reducers/getMonstersReducer';
+import monsterReducer from './_reducers/monsterReducer';
 
 
 const rootReducer = combineReducers({
   battleView: battleViewReducer,
   floorList: floorsReducer,
   monsterList: getMonstersReducer,
+  monster: monsterReducer,
   items: itemsReducer,
   stats: statsReducer,
   loadingApi: loadingApiReducer,

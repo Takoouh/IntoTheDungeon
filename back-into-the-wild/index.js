@@ -30,11 +30,22 @@ app.get('/api/adventurer', (req, res) => {
 })
 
 
-app.get('/api/monsters/:id', (req, res) => {
+app.get('/api/monsters/floor=:id', (req, res) => {
   const floor = [req.params.id];
   connection.query(`SELECT monsterId FROM floorBestiary WHERE floor = ${floor}`, (err, results) => {
     if (err) {
       res.status(500).send("Error retrieving monster's from this floor");
+    } else {
+      res.json(results);
+    }
+  })
+})
+
+app.get('/api/monster/:id', (req, res) => {
+  const id = [req.params.id];
+  connection.query(`SELECT * FROM monsters WHERE id = ${id}`, (err, results) => {
+    if (err) {
+      res.status(500).send("Error retrieving this monster");
     } else {
       res.json(results);
     }
