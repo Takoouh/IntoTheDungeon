@@ -3,12 +3,10 @@ import { Row, Col, Button, Progress } from "reactstrap"
 
 class Encounter extends Component {
 
-  // isDead() {
-  //   this.props.adventurer.healthPoint === 0 ? this.props.getKilled(this.props.adventurer) : ""
-  // }
+
   attackMonster(monster, adventurer) {
     this.props.resolveAttack(monster, adventurer)
-    if (this.props.adventurer.healthPoint <= 0) { this.props.viewDeathScreen() }
+    if (this.props.adventurer.healthPoint <= this.props.monster.strength && this.props.monster.currentHp > this.props.adventurer.strength) { this.props.viewDeathScreen() }
 
 
   }
@@ -16,7 +14,7 @@ class Encounter extends Component {
   render() {
     return (
       <Fragment>
-        {this.props.monster.name ?
+        {this.props.monster.healthPoint ?
           <Fragment>
             <Row>
               <Col xs="12">{this.props.monster.name}</Col>

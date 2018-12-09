@@ -1,5 +1,9 @@
 import { connect } from "react-redux"
-import { makeGetAdventurerStatsAction, makeLoadingStatsAction, makeGetFloorListAction, makeGetKilledAction } from "../_actions/actions"
+import {
+  makeGetAdventurerStatsAction,
+  makeLoadingStatsAction,
+  makeGetFloorListAction
+} from "../_actions/actions"
 import Stats from "../Stats"
 
 const mapStateToProps = state => ({
