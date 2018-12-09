@@ -25,6 +25,19 @@
 }
 ```
 
+-DO_ATTACK is dispatched when we click on atk btn
+```javascript
+type: "DO_ATTACK"
+monster: {}
+adventurer: {}
+```
+
+-GET_KILLED is dispatched when we die
+```javascript
+type: "GET_KILLED"
+adventurer: {}
+```
+
 -CHANGE_BATTLE_VIEW is dispatched when we chose options during the fight
 ```javascript
 {
@@ -94,9 +107,9 @@ const initital: false
 When LOADING_STATS is dispatched, the state becomes true
 When GET_ADVENTURER_STATS is dispatched, the state becomes false
 
--statsReducer
+-adventurerReducer
 ```javascript
-const initital: []
+const initital: {}
 ```
 When LOADING_STATS is dispatched, the state becomes true
-When statsReducer is dispatched, the state becomes action.stats
+When adventurerReducer is dispatched, the state becomes action.adventurer

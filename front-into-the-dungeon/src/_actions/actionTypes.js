@@ -12,8 +12,13 @@ export const GET_MONSTER_LIST = "GET_MONSTER_LIST"
 
 export const GET_RDM_MONSTER = "GET_RDM_MONSTER"
 
-//BattlesViews :
+//BattleActions :
+export const DO_ATTACK = "DO_ATTACK"
+export const GET_KILLED = "GET_KILLED"
 
+
+//BattlesViews :
 export const VIEW_FLOOR_LIST = "VIEW_FLOOR_LIST"
 export const VIEW_START_BATTLE = "VIEW_START_BATTLE"
 export const VIEW_ENCOUNTER = "VIEW_ENCOUNTER"
+export const VIEW_DEATH_SCREEN = "VIEW_DEATH_SCREEN"

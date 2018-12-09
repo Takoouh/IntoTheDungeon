@@ -3,7 +3,8 @@ import { makeViewFloorListAction, makeViewStartBattleAction } from "../_actions/
 import FightScene from "../fight/FightScene"
 
 const mapStateToProps = state => ({
-  battleView: state.battleView
+  battleView: state.battleView,
+  adventurer: state.adventurer
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -8,7 +8,10 @@ import {
   VIEW_FLOOR_LIST,
   VIEW_START_BATTLE,
   GET_RDM_MONSTER,
-  VIEW_ENCOUNTER
+  VIEW_ENCOUNTER,
+  DO_ATTACK,
+  GET_KILLED,
+  VIEW_DEATH_SCREEN
 } from "./actionTypes"
 
 export const makeGetFloorListAction = currentFloor => (
@@ -54,6 +57,19 @@ export const makeGetAdventurerStatsAction = stats => (
   }
 )
 
+//BattleActions :
+export const makeDoAttackAction = (monster, adventurer) => ({
+  type: DO_ATTACK,
+  monster,
+  adventurer
+})
+
+export const makeGetKilledAction = (adventurer) => ({
+  type: GET_KILLED,
+  adventurer
+})
+
+
 //BattleViews :
 export const makeViewFloorListAction = () => ({
   type: VIEW_FLOOR_LIST
@@ -65,4 +81,8 @@ export const makeViewStartBattleAction = () => ({
 
 export const makeViewEncounterAction = () => ({
   type: VIEW_ENCOUNTER
+})
+
+export const makeViewDeathScreenAction = () => ({
+  type: VIEW_DEATH_SCREEN
 })

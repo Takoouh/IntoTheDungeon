@@ -7,7 +7,9 @@ import {
   VIEW_START_BATTLE,
   VIEW_FLOOR_LIST,
   GET_MONSTER_LIST,
-  GET_RDM_MONSTER
+  GET_RDM_MONSTER,
+  DO_ATTACK,
+  GET_KILLED
 } from "./actionTypes"
 import {
   makeGetFloorListAction,
@@ -18,7 +20,9 @@ import {
   makeGetItemsListAction,
   makeLoadingApiAction,
   makeLoadingStatsAction,
-  makeGetAdventurerStatsAction
+  makeGetAdventurerStatsAction,
+  makeDoAttackAction,
+  makeGetKilledAction
 } from './actions'
 
 describe("makeGetFloorListAction", () => {
@@ -149,5 +153,48 @@ describe("makeGetAdventurerStatsAction", () => {
       stats
     }
     expect(makeGetAdventurerStatsAction(stats)).toEqual(expected)
+  })
+})
+
+//BattleActions
+describe("makeDoAttackAction", () => {
+  it("should return a DO_ATTACK action", () => {
+    const monster = {
+      name: "Goblin",
+      currentHp: 10
+    }
+    const adventurer = {
+      name: "Hero",
+      strength: 5
+    }
+    const expected = {
+      type: DO_ATTACK,
+      monster: {
+        name: "Goblin",
+        currentHp: 10
+      },
+      adventurer: {
+        name: "Hero",
+        strength: 5
+      }
+    }
+    expect(makeDoAttackAction(monster, adventurer)).toEqual(expected)
+  })
+})
+
+describe("makeGetKilledction", () => {
+  it("should return a GET_KILLED action", () => {
+    const adventurer = {
+      name: "Hero",
+      strength: 5
+    }
+    const expected = {
+      type: GET_KILLED,
+      adventurer: {
+        name: "Hero",
+        strength: 5
+      }
+    }
+    expect(makeGetKilledAction(adventurer)).toEqual(expected)
   })
 })

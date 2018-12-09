@@ -16,7 +16,11 @@ class StartBattle extends Component {
     return (
       <Fragment>
         <Button onClick={() => this.props.showFloorList()}>Change Floor</Button>
-        <Button onClick={() => this.getSelectedMonsterStats()}>Start</Button>
+        {this.props.monsterList.length > 0 ?
+          <Button onClick={() => this.getSelectedMonsterStats()}>Start</Button>
+          : ""
+        }
+
       </Fragment>
     )
   }

@@ -25,7 +25,7 @@ class FloorChoice extends Component {
             <h2>Go to next floor :</h2>
           </Col>
         </Row>
-        {this.props.stats[0] ? (
+        {this.props.adventurer ? (
           <Fragment>
 
             <Row>
@@ -33,14 +33,13 @@ class FloorChoice extends Component {
                 <Card onClick={() => this.selectFloorAndMonsters(1)} inverse>
                   <CardImg width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97270&w=318&h=270&bg=333333&txtclr=666666" alt="Card image cap" />
                   <CardImgOverlay>
-                    <CardTitle>Floor {this.props.stats[0].currentFloor}</CardTitle>
+                    <CardTitle>Floor {this.props.adventurer.currentFloor}</CardTitle>
                   </CardImgOverlay>
                 </Card>
               </Col>
             </Row>
-            {/* {console.log(this.props.getCurrentFloor(6))} */}
 
-            {(this.props.stats[0].currentFloor > 0) ?
+            {(this.props.adventurer.currentFloor > 1) ?
               <Fragment>
                 <Row>
                   <Col xs="12">

@@ -12,7 +12,7 @@ import { BrowserRouter } from "react-router-dom"
 import itemsReducer from "./_reducers/itemsReducer"
 import loadingApiReducer from './_reducers/loadingApiReducer';
 import loadingStatsReducer from './_reducers/loadingStatsReducer';
-import statsReducer from './_reducers/statsReducer';
+import adventurerReducer from './_reducers/adventurerReducer';
 import floorsReducer from './_reducers/floorsReducer';
 import battleViewReducer from './_reducers/battleViewReducer';
 import getMonstersReducer from './_reducers/getMonstersReducer';
@@ -25,7 +25,7 @@ const rootReducer = combineReducers({
   monsterList: getMonstersReducer,
   monster: monsterReducer,
   items: itemsReducer,
-  stats: statsReducer,
+  adventurer: adventurerReducer,
   loadingApi: loadingApiReducer,
   loadingStats: loadingStatsReducer
 })

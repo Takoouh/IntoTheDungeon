@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react"
+import { Progress } from "reactstrap"
 import axios from "axios"
 
 class Stats extends Component {
@@ -7,19 +8,21 @@ class Stats extends Component {
     this.props.loadingStats()
     axios.get("http://localhost:3010/api/adventurer")
       .then(res => this.props.adventurerStats(res.data))
-      .then(() => this.props.getCurrentFloor(this.props.stats[0].currentFloor))
+      .then(() => this.props.getCurrentFloor(this.props.adventurer.currentFloor))
   }
   render() {
 
     return (
       <div>
-        {this.props.stats[0] ?
+        {this.props.adventurer ?
           (<Fragment>
-            <h2>{this.props.stats[0].name}</h2>
-            <p>{this.props.stats[0].gold}<i className="fas fa-coins pl-2"></i></p>
-            <p>{this.props.stats[0].level}</p>
-            <p>{this.props.stats[0].strength}<i className="fas fa-fist-raised pl-2"></i></p>
-            <p>{this.props.stats[0].defense}<i className="fas fa-shield-alt pl-2"></i></p>
+            <h2>{this.props.adventurer.name}</h2>
+            <p>{this.props.adventurer.gold}<i className="fas fa-coins pl-2"></i></p>
+            <p>{this.props.adventurer.level}</p>
+            <p className="text-center">{this.props.adventurer.healthPoint} / {this.props.adventurer.maxHp}</p>
+            <Progress color={((this.props.adventurer.healthPoint / this.props.adventurer.maxHp) * 100) > 25 ? "success" : "danger"} value={(this.props.adventurer.healthPoint / this.props.adventurer.maxHp) * 100} />
+            <p>{this.props.adventurer.strength}<i className="fas fa-fist-raised pl-2"></i></p>
+            <p>{this.props.adventurer.defense}<i className="fas fa-shield-alt pl-2"></i></p>
           </Fragment>)
           :
 
