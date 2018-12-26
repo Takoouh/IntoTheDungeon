@@ -5,7 +5,8 @@ import axios from "axios"
 class StartBattle extends Component {
 
   getSelectedMonsterStats = () => {
-    const rdmIdMonster = Math.floor(Math.random() * this.props.monsterList.length)
+    const rdmIdMonster = Math.ceil(Math.random() * this.props.monsterList.length)
+    console.log(rdmIdMonster)
     axios
       .get(`http://localhost:3010/api/monster/${rdmIdMonster}`)
       .then(res => this.props.getMonsterStats(res.data[0]))

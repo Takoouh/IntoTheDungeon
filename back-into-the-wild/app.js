@@ -3,11 +3,31 @@ const express = require("express")
 const connection = require("./conf");
 const app = express();
 const port = 3010;
-const cors = require('cors');
 
+const passport = require("passport")
+require("./passport-strategy")
+const auth = require('./auth')
+
+const cors = require('cors');
 app.use(cors())
 
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+
 const userLoged = 1
+
+app.use('/auth', auth);
+//app.use("/user", passport.authenticate('jwt', { session: false }), user);
+
+
+app.get("/test", passport.authenticate("jwt", { session: false }), (req, res) => {
+  console.log('Connected user ', req.user)
+  res.send(`authorized for user ${req.user.mail} with an id ${req.user.id}`)
+})
 
 app.get('/api/items', (req, res) => {
   connection.query("SELECT * FROM items", (err, results) => {
@@ -25,6 +45,20 @@ app.get('/api/adventurer', (req, res) => {
       res.status(500).send("Error retrieving your adventurer's informations");
     } else {
       res.json(results);
+    }
+  })
+})
+
+app.put('/api/adventurer/:id', (req, res) => {
+  const idAdventurer = req.params.id;
+  const formData = req.body;
+
+  connection.query("UPDATE adventurers SET ? WHERE id=?", [formData, idAdventurer], err => {
+    if (err) {
+      console.log(err);
+      res.status(500).send("Error during the Adventurer's update")
+    } else {
+      res.sendStatus(200)
     }
   })
 })

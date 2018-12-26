@@ -5,6 +5,9 @@ import axios from "axios"
 
 
 class FloorChoice extends Component {
+  componentDidMount() {
+    this.props.getCurrentFloor(this.props.adventurer.currentFloor)
+  }
 
   selectFloorAndMonsters = (floor) => {
     this.props.showStartBattle();

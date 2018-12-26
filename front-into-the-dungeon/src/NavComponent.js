@@ -3,6 +3,11 @@ import { Link } from "react-router-dom"
 import { Nav, NavItem } from "reactstrap"
 
 class NavComponent extends Component {
+
+  disconnect() {
+    localStorage.removeItem("IntoTheDungeonJwt")
+  }
+
   render() {
     return (
       <Fragment>
@@ -14,13 +19,16 @@ class NavComponent extends Component {
             <Link to="/shop"><i className="pr-2 fas fa-coins"></i>Shop</Link>
           </NavItem>
           <NavItem className="my-2">
-            <Link to="#"><i className="pr-2 fas fa-beer"></i>Inn</Link>
+            <Link to="/inn"><i className="pr-2 fas fa-beer"></i>Inn</Link>
           </NavItem>
           <NavItem className="my-2">
             <Link to="#"><i className="pr-2 fas fa-book-dead"></i>Journal</Link>
           </NavItem>
           <NavItem className="my-2">
             <Link disabled to="#"><i className="pr-2 fas fa-crown"></i>Ranking</Link>
+          </NavItem>
+          <NavItem className="my-2">
+            <Link disabled to="#" onClick={() => this.disconnect()}><i className="pr-2 fas fa-sign-out-alt"></i>Log off</Link>
           </NavItem>
         </Nav>
       </Fragment>

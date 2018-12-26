@@ -14,7 +14,12 @@ export const GET_RDM_MONSTER = "GET_RDM_MONSTER"
 
 //BattleActions :
 export const DO_ATTACK = "DO_ATTACK"
+export const GET_REWARD = "GET_REWARD"
+export const UNLOCK_UPPER_FLOOR = "UNLOCK_UPPER_FLOOR"
 export const GET_KILLED = "GET_KILLED"
+
+
+export const USE_INN = "USE_INN"
 
 
 //BattlesViews :

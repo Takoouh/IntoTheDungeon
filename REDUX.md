@@ -32,9 +32,27 @@ monster: {}
 adventurer: {}
 ```
 
+-GET_REWARD is dispatched when we kill the monster
+```javascript
+type: "GET_REWARD"
+adventurer: {},
+monster: {}
+```
+-UNLOCK_UPPER_FLOOR is dispatched when we kill the monster
+```javascript
+type: "GET_REWARD"
+adventurer: {}
+```
+
 -GET_KILLED is dispatched when we die
 ```javascript
 type: "GET_KILLED"
+adventurer: {}
+```
+
+-USE_INN is dispatched when we rest at the inn
+```javascript
+type: "USE_INN"
 adventurer: {}
 ```
 

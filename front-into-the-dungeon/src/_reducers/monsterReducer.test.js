@@ -4,7 +4,7 @@ import { makeGetRdmMonsterAction, makeDoAttackAction } from "../_actions/actions
 describe("monsterReducer", () => {
   it("handles GET_RDM_MONSTER action", () => {
     const fakeState = {}
-    const dataFetched = [{ name: "nom", level: 1, healthPoint: 10 }]
+    const dataFetched = { name: "nom", level: 1, healthPoint: 10 }
     const expected = { name: "nom", level: 1, healthPoint: 10, currentHp: 10 }
     expect(monsterReducer(fakeState, makeGetRdmMonsterAction(dataFetched))).toEqual(expected)
   })

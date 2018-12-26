@@ -9,7 +9,10 @@ import {
   GET_MONSTER_LIST,
   GET_RDM_MONSTER,
   DO_ATTACK,
-  GET_KILLED
+  GET_KILLED,
+  GET_REWARD,
+  UNLOCK_UPPER_FLOOR,
+  USE_INN
 } from "./actionTypes"
 import {
   makeGetFloorListAction,
@@ -22,7 +25,10 @@ import {
   makeLoadingStatsAction,
   makeGetAdventurerStatsAction,
   makeDoAttackAction,
-  makeGetKilledAction
+  makeGetKilledAction,
+  makeGetRewardAction,
+  makeUnlockUpperFloorAction,
+  makeUseInnAction
 } from './actions'
 
 describe("makeGetFloorListAction", () => {
@@ -179,6 +185,71 @@ describe("makeDoAttackAction", () => {
       }
     }
     expect(makeDoAttackAction(monster, adventurer)).toEqual(expected)
+  })
+})
+
+describe("makeGetRewardAction", () => {
+  it("should return a GET_REWARD action", () => {
+    const adventurer = {
+      name: "Hero",
+      strength: 5
+    }
+    const monster = {
+      name: "goblin",
+      strength: 5
+    }
+    const expected = {
+      type: GET_REWARD,
+      adventurer: {
+        name: "Hero",
+        strength: 5
+      },
+      monster: {
+        name: "goblin",
+        strength: 5
+      }
+    }
+    expect(makeGetRewardAction(adventurer, monster)).toEqual(expected)
+  })
+})
+
+describe("makeUseInnAction", () => {
+  it("should return a UseInn action", () => {
+    const adventurer = {
+      name: "Hero",
+      healthPoint: 5
+    }
+    const expected = {
+      type: USE_INN,
+      adventurer
+    }
+    expect(makeUseInnAction(adventurer)).toEqual(expected)
+  })
+})
+
+describe("makeUnlockUpperFloorAction", () => {
+  it("should return a UNLOCK_UPPER_FLOOR action", () => {
+    const adventurer = {
+      name: "Hero",
+      strength: 5
+    }
+
+    const monster = {
+      name: "goblin",
+      strength: 5
+    }
+    const expected = {
+      type: UNLOCK_UPPER_FLOOR,
+      adventurer: {
+        name: "Hero",
+        strength: 5
+      },
+      monster: {
+        name: "goblin",
+        strength: 5
+      }
+    }
+    expect(makeUnlockUpperFloorAction(adventurer, monster)).toEqual(expected)
   })
 })
 

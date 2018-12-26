@@ -11,7 +11,10 @@ import {
   VIEW_ENCOUNTER,
   DO_ATTACK,
   GET_KILLED,
-  VIEW_DEATH_SCREEN
+  VIEW_DEATH_SCREEN,
+  GET_REWARD,
+  UNLOCK_UPPER_FLOOR,
+  USE_INN
 } from "./actionTypes"
 
 export const makeGetFloorListAction = currentFloor => (
@@ -64,8 +67,28 @@ export const makeDoAttackAction = (monster, adventurer) => ({
   adventurer
 })
 
+export const makeGetRewardAction = (adventurer, monster) => ({
+  type: GET_REWARD,
+  adventurer,
+  monster
+})
+
+export const makeUnlockUpperFloorAction = (adventurer, monster) => ({
+  type: UNLOCK_UPPER_FLOOR,
+  adventurer,
+  monster
+})
+
 export const makeGetKilledAction = (adventurer) => ({
   type: GET_KILLED,
+  adventurer
+})
+
+
+
+//Inn :
+export const makeUseInnAction = (adventurer) => ({
+  type: USE_INN,
   adventurer
 })
 

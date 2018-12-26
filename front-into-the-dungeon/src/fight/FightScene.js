@@ -3,11 +3,9 @@ import FloorsContainer from "../_containers/FloorsContainer";
 import StartBattleContainer from "../_containers/StartBattleContainer";
 import EncounterContainer from "../_containers/EncounterContainer";
 import DeathScreenContainer from "../_containers/DeathScreenContainer";
-
 class FightScene extends Component {
 
   render() {
-
     return (
       <Fragment>
         {this.props.battleView === "floorList" ?

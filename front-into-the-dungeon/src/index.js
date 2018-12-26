@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, combineReducers } from "redux"
+import { createStore, combineReducers, applyMiddleware } from "redux"
 import { Provider } from "react-redux"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { reducer as formReducer } from "redux-form"
 
 import { BrowserRouter } from "react-router-dom"
 
@@ -27,11 +28,13 @@ const rootReducer = combineReducers({
   items: itemsReducer,
   adventurer: adventurerReducer,
   loadingApi: loadingApiReducer,
-  loadingStats: loadingStatsReducer
+  loadingStats: loadingStatsReducer,
+  form: formReducer
 })
 
 const store = createStore(
   rootReducer,
+  // applyMiddleware(thunk),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 

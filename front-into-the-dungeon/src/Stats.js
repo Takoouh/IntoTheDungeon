@@ -7,6 +7,7 @@ class Stats extends Component {
   checkIfDead() {
     if (this.props.adventurer.healthPoint === 0) { this.props.viewdeathScreen() }
   }
+  CO
 
   componentDidMount() {
     this.props.loadingStats()
