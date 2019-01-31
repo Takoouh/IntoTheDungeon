@@ -11,24 +11,24 @@ class NavComponent extends Component {
   render() {
     return (
       <Fragment>
-        <Nav className="d-flex w-100 flex-column text-center">
+        <Nav className="w-100 flex-column text-left px-2">
           <NavItem className="my-2">
-            <Link onClick={() => this.props.showFloorList()} to="/"><i className="pr-2 fas fa-dungeon"></i>Fight</Link>
+            <Link onClick={() => this.props.showFloorList()} to="/"><i className="px-2 fas fa-dungeon"></i>{this.props.collapsed ? "Fight" : ""}</Link>
           </NavItem>
           <NavItem className="my-2">
-            <Link to="/shop"><i className="pr-2 fas fa-coins"></i>Shop</Link>
+            <Link to="/shop"><i className="px-2 fas fa-coins"></i>{this.props.collapsed ? "Shop" : ""}</Link>
           </NavItem>
           <NavItem className="my-2">
-            <Link to="/inn"><i className="pr-2 fas fa-beer"></i>Inn</Link>
+            <Link to="/inn"><i className="px-2 fas fa-beer"></i>{this.props.collapsed ? "Inn" : ""}</Link>
           </NavItem>
           <NavItem className="my-2">
-            <Link to="#"><i className="pr-2 fas fa-book-dead"></i>Journal</Link>
+            <Link to="#"><i className="px-2 fas fa-book-dead"></i>{this.props.collapsed ? "Journal" : ""}</Link>
           </NavItem>
           <NavItem className="my-2">
-            <Link disabled to="#"><i className="pr-2 fas fa-crown"></i>Ranking</Link>
+            <Link disabled to="#"><i className="px-2 fas fa-crown"></i>{this.props.collapsed ? "Ranking" : ""}</Link>
           </NavItem>
           <NavItem className="my-2">
-            <Link disabled to="#" onClick={() => this.disconnect()}><i className="pr-2 fas fa-sign-out-alt"></i>Log off</Link>
+            <Link disabled to="#" onClick={() => this.disconnect()}><i className="px-2 fas fa-sign-out-alt"></i>{this.props.collapsed ? "Log off" : ""}</Link>
           </NavItem>
         </Nav>
       </Fragment>

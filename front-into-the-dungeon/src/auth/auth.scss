@@ -1,0 +1,50 @@
+@import "../App.scss";
+
+.auth .nav-tabs{
+  margin: 0 25px;
+  border-bottom: 0px;
+  .nav-link{
+    padding: 0 15px;
+    line-height: 35px;
+    box-shadow: none;
+    background-color: $dark;
+    border:0px;
+    cursor: pointer;
+    &:hover{
+      border: 0px;
+    }
+  }
+  .active{
+      background-color: $lightGrey
+  }
+}
+
+.logForm{
+  background-color: $lightGrey;
+  padding: 30px;
+  border-radius: 30px;
+  label{
+    display:block;
+  }
+  input{
+    width: 100%;
+    border: none;
+    line-height: 40px;
+    border-radius: 20px;
+    padding: 0 20px;
+    margin: 10px 0;
+    &:focus{
+      outline: none;
+    }
+  }
+  button{
+    padding: 0 10px;
+    background-color: $dark;
+    color: white;
+    line-height: 30px;
+    border-radius: 15px;
+    &:focus{
+      outline: none;
+    }
+  }
+}

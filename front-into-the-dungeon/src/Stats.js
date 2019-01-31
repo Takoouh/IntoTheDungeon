@@ -7,11 +7,15 @@ class Stats extends Component {
   checkIfDead() {
     if (this.props.adventurer.healthPoint === 0) { this.props.viewdeathScreen() }
   }
-  CO
 
   componentDidMount() {
     this.props.loadingStats()
-    axios.get("http://localhost:3010/api/adventurer")
+    axios.get("http://localhost:3010/api/adventurer", {
+      headers: {
+        accept: "application/json",
+        authorization: "Bearer " + localStorage.getItem("IntoTheDungeonJwt")
+      }
+    })
       .then(res => this.props.adventurerStats(res.data))
       .then(() => this.props.getCurrentFloor(this.props.adventurer.currentFloor))
   }

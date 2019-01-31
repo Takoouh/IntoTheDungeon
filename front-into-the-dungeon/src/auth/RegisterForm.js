@@ -3,18 +3,15 @@ import { Field, reduxForm } from "redux-form"
 
 let RegisterForm = props => {
   const { handleSubmit } = props
-  return <form onSubmit={handleSubmit}>
+  return <form className="logForm" onSubmit={handleSubmit}>
     <div>
-      <label htmlFor="email">Email</label>
-      <Field name="email" component='input' type='email'></Field>
+      <Field name="email" component='input' placeholder="your email" type='email'></Field>
     </div>
     <div>
-      <label htmlFor="name">Username</label>
-      <Field name="name" component='input' type='text'></Field>
+      <Field name="name" component='input' placeholder="your username" type='text'></Field>
     </div>
     <div>
-      <label htmlFor="password">Password</label>
-      <Field name="password" component='input' type='password'></Field>
+      <Field name="password" component='input' placeholder="your password" type='password'></Field>
     </div>
     <button type="submit">Register</button>
   </form>

@@ -8,14 +8,14 @@ class Encounter extends Component {
   componentDidUpdate(prevProps) {
     if (prevProps.adventurer !== this.props.adventurer) {
       axios
-        .put('http://localhost:3010/api/adventurer/1', { ...this.props.adventurer })
+        .put(`http://localhost:3010/api/adventurer/${this.props.adventurer.id}`, { ...this.props.adventurer })
     }
   }
 
   getSelectedMonsterStats = () => {
-    const rdmIdMonster = Math.ceil(Math.random() * this.props.monsterList.length)
+    const rdmIdMonster = Math.floor(Math.random() * this.props.monsterList.length)
     axios
-      .get(`http://localhost:3010/api/monster/${rdmIdMonster}`)
+      .get(`http://localhost:3010/api/monster/${this.props.monsterList[rdmIdMonster]}`)
       .then(res => this.props.getMonsterStats(res.data[0]))
       .then(() => this.props.showEncounter())
   }
@@ -26,7 +26,7 @@ class Encounter extends Component {
     if (this.props.adventurer.healthPoint <= this.props.monster.strength && this.props.monster.currentHp > this.props.adventurer.strength) {
       this.props.viewDeathScreen()
     } else if (this.props.adventurer.strength >= this.props.monster.currentHp) {
-      if (Math.random() * 10 > 9) {
+      if (Math.random() * 10 > 8) {
         this.props.unlockUpperFloor(this.props.adventurer, this.props.monster)
       } else {
         this.props.getReward(this.props.adventurer, this.props.monster)
@@ -46,7 +46,7 @@ class Encounter extends Component {
               <Col xs="12">{this.props.monster.name}</Col>
             </Row>
             <Row>
-              <Col xs="12"><img src={this.props.monster.picture} /></Col>
+              <Col xs="12"><img alt={this.props.monster.name} src={this.props.monster.picture} /></Col>
             </Row>
             <Row>
               <Col xs="4"><div className="text-center">{this.props.monster.currentHp}/{this.props.monster.healthPoint}</div>

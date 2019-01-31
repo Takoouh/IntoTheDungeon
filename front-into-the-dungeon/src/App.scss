@@ -1,6 +1,12 @@
+$green: #dad4a6;
+$dark: #5c5c51;
+$lightGrey: #d5d8d1;
+$darkGrey: #a1a198;
+
 html, body{
   height: 100vh;
   overflow: hidden;
+  background-color: $darkGrey
 }
 .content{
   width: 100%;

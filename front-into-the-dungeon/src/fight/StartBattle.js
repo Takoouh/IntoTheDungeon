@@ -5,10 +5,10 @@ import axios from "axios"
 class StartBattle extends Component {
 
   getSelectedMonsterStats = () => {
-    const rdmIdMonster = Math.ceil(Math.random() * this.props.monsterList.length)
+    const rdmIdMonster = Math.floor(Math.random() * this.props.monsterList.length)
     console.log(rdmIdMonster)
     axios
-      .get(`http://localhost:3010/api/monster/${rdmIdMonster}`)
+      .get(`http://localhost:3010/api/monster/${this.props.monsterList[rdmIdMonster]}`)
       .then(res => this.props.getMonsterStats(res.data[0]))
       .then(() => this.props.showEncounter())
   }
@@ -17,7 +17,7 @@ class StartBattle extends Component {
     return (
       <Fragment>
         <Button onClick={() => this.props.showFloorList()}>Change Floor</Button>
-        {this.props.monsterList.length > 4 ?
+        {this.props.monsterList.length > 0 ?
           <Button onClick={() => this.getSelectedMonsterStats()}>Start</Button>
           : ""
         }

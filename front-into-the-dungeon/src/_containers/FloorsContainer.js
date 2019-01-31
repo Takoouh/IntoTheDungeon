@@ -5,8 +5,7 @@ import FloorChoice from "../fight/FloorChoice"
 const mapStateToProps = state => ({
   floorList: state.floorList,
   adventurer: state.adventurer,
-  isLoadingStats: state.loadingStats,
-  floorList: state.floorList
+  isLoadingStats: state.loadingStats
 })
 
 const mapDispatchToProps = dispatch => ({

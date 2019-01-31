@@ -33,7 +33,7 @@ class FloorChoice extends Component {
 
             <Row>
               <Col xs="3">
-                <Card onClick={() => this.selectFloorAndMonsters(1)} inverse>
+                <Card onClick={() => this.selectFloorAndMonsters(this.props.adventurer.currentFloor)} inverse>
                   <CardImg width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97270&w=318&h=270&bg=333333&txtclr=666666" alt="Card image cap" />
                   <CardImgOverlay>
                     <CardTitle>Floor {this.props.adventurer.currentFloor}</CardTitle>
@@ -42,7 +42,7 @@ class FloorChoice extends Component {
               </Col>
             </Row>
 
-            {(this.props.adventurer.currentFloor > 1) ?
+            {(this.props.adventurer.currentFloor >= 1) ?
               <Fragment>
                 <Row>
                   <Col xs="12">
@@ -54,7 +54,7 @@ class FloorChoice extends Component {
                   {this.props.floorList.map((floor, index) => (
                     index !== 0 ?
                       <Col key={index} xs="3">
-                        <Card inverse>
+                        <Card onClick={() => this.selectFloorAndMonsters(floor)} inverse>
                           <CardImg width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97270&w=318&h=270&bg=333333&txtclr=666666" alt="Card image cap" />
                           <CardImgOverlay>
                             <CardTitle>Floor {floor} </CardTitle>

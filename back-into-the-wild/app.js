@@ -39,8 +39,8 @@ app.get('/api/items', (req, res) => {
   })
 })
 
-app.get('/api/adventurer', (req, res) => {
-  connection.query("SELECT * FROM adventurers WHERE id=?", userLoged, (err, results) => {
+app.get('/api/adventurer', passport.authenticate("jwt", { session: false }), (req, res) => {
+  connection.query("SELECT * FROM adventurers WHERE id=?", req.user.id, (err, results) => {
     if (err) {
       res.status(500).send("Error retrieving your adventurer's informations");
     } else {

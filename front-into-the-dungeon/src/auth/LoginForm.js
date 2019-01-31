@@ -3,14 +3,12 @@ import { Field, reduxForm } from "redux-form"
 
 let LoginForm = props => {
   const { handleSubmit } = props
-  return <form onSubmit={handleSubmit}>
+  return <form className="logForm" onSubmit={handleSubmit}>
     <div>
-      <label htmlFor="email">Email</label>
-      <Field name="email" component='input' type='email'></Field>
+      <Field name="email" component='input' type='email' placeholder="your email"></Field>
     </div>
     <div>
-      <label htmlFor="password">Password</label>
-      <Field name="password" component='input' type='password'></Field>
+      <Field name="password" component='input' type='password' placeholder="your password"></Field>
     </div>
     <button type="submit">Log in</button>
   </form>

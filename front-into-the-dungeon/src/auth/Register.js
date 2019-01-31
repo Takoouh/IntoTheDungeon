@@ -1,13 +1,15 @@
 import React, { Component } from "react"
 import RegisterForm from "./RegisterForm";
 import axios from "axios"
-import ls from "local-storage"
+import { withRouter } from "react-router-dom"
+
+import "./auth.scss"
 
 class Register extends Component {
   submit = values => {
     axios.post('http://localhost:3010/auth/signup', values).then(results => {
       if (results) {
-        ls.set("IntoTheDungeonJwt", results.data.token)
+        localStorage.set("IntoTheDungeonJwt", results.data.token)
         this.props.history.push("/")
       }
     })
@@ -19,4 +21,4 @@ class Register extends Component {
   }
 }
 
-export default Register
+export default withRouter(Register)
